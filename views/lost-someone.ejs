@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/styles/lost-someone.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Lost Someone</title>
+</head>
+<body>
+  <br/>
+  <a href="/" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;margin-left:10px;">Back to Home</a>
+  <div class="form-container">
+    <h2>Lost Someone</h2>
+    <form action="/lost-someone" method="POST" enctype="multipart/form-data">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="lostLocation">Lost Location:</label>
+      <input type="text" id="lostLocation" name="lostLocation" required>
+
+      <label for="reward">Reward (Price Money):</label>
+      <input type="text" id="reward" name="reward">
+
+      <label for="contact">Contact Number:</label>
+      <input type="text" id="contact" name="contact" required>
+
+      <label for="address">Home Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>

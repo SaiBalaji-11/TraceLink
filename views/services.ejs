@@ -1,0 +1,158 @@
+<%- include('partials/header') %>
+
+<div class="wrapper">
+  <%- include('sidebar') %>
+
+  <div class="container-services">
+    <h2>How It Works</h2>
+    <p>Our platform is designed to be user-friendly and efficient. Here's how you can make a difference:</p>
+    <ol>
+      <li><strong>Step 1:</strong> Browse through ongoing cases or report a missing or found person by clicking the "Lost Someone" or "Found Someone" buttons and filling out the forms.</li>
+      <li><strong>Step 2:</strong> Share relevant details, descriptions, or images of the missing or found person to help raise awareness.</li>
+      <li><strong>Step 3:</strong> Use our search functionality to find missing persons by name, location, or image.</li>
+      <li><strong>Step 4:</strong> Stay connected with real-time updates, tips, and alerts about ongoing cases to help reunite families.</li>
+      <li><strong>Step 5:</strong> Provide any tips, clues, or sightings that might aid in locating a missing person or identifying a found individual.</li>
+    </ol>
+    <p>By following these simple steps, you can actively contribute to helping locate missing persons and provide valuable support to families in distress.</p>
+  </div>
+</div>
+
+<head>
+  <link rel="stylesheet" href="/styles/services.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+  /* General Styles */
+ /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Services Container */
+.container-services {
+  border: 3px solid #d9534f;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  background-color: #f8d7da;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.container-services h2 {
+  color: #b30000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.container-services p {
+  font-size: 1rem;
+  color: #721c24;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.container-services ol {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 0 20px 0;
+}
+
+.container-services ol li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 1rem;
+  color: #721c24;
+  line-height: 1.5;
+}
+
+.container-services ol li::before {
+  content: "✔";
+  color: green;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.container-services ol li strong {
+  color: #d9534f;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column; /* Stacking the sidebar and content vertically on smaller devices */
+  }
+  
+  .container-services {
+    margin-left: 0;
+    padding: 25px;
+  }
+  
+  .container-services h2 {
+    font-size: 2rem;
+  }
+  
+  .container-services p,
+  .container-services ol li {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column; /* Ensuring stacking for tablets */
+  }
+
+  .container-services {
+    margin-left: 0;
+    padding: 25px;
+  }
+  
+  .container-services h2 {
+    font-size: 2.2rem;
+  }
+  
+  .container-services p,
+  .container-services ol li {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    flex-direction: row; /* Switching back to row on larger screens */
+  }
+
+  .container-services {
+    padding: 35px;
+  }
+  
+  .container-services h2 {
+    font-size: 2.5rem;
+  }
+}
+
+</style>
+
+<%- include('partials/footer') %>

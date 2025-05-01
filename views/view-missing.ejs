@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="stylesheet" href="/styles/view-missing.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="/js/search-by-face.js"></script>
+</head>
+
+<body>
+  <br />
+  <a href="/" class="back-button">Back to Home</a>
+  <br /><br />
+
+  <h1 class="section-heading">Details of Missing Persons:</h1>
+  <hr />
+  <br />
+
+  <!-- Combined Search Section -->
+  <div class="search-section">
+    <!-- Search by Name or City -->
+    <form action="/search-missing" method="GET" class="search-form">
+      <input type="text" name="query" placeholder="Search by Name or City" required />
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Search by Face -->
+    <form class="upload-form" onsubmit="event.preventDefault();">
+      <input type="file" id="img1" accept="image/*" />
+      <button id="searchByFaceBtn">Search By Face</button>
+    </form>
+  </div>
+
+  <!-- Lost Persons Section -->
+  <div class="section-title">
+    <h2>Lost Persons</h2>
+    <hr/>
+  </div>
+  <div class="card-container">
+    <% if (lostPersons.length === 0) { %>
+      <p>No lost persons found.</p>
+    <% } else { %>
+      <% lostPersons.forEach(person => { %>
+        <div class="person-card">
+          <img src="<%= person.image %>" alt="Image of <%= person.name %>" class="person-img" />
+          <div class="person-info">
+            <h3><%= person.name %></h3>
+            <p><strong>Phone:</strong> <%= person.contact %></p>
+            <p><strong>City:</strong> <%= person.address %></p>
+            <p><strong>Location Last Seen:</strong> <%= person.lostLocation %></p>
+            <p><strong>Reward:</strong> <%= person.reward || 'N/A' %></p>
+          </div>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+
+  <!-- Found Persons Section -->
+  <div class="section-title">
+    <h2>Found Persons</h2>
+    <hr/>
+  </div>
+  <div class="card-container">
+    <% if (foundPersons.length === 0) { %>
+      <p>No found persons reported.</p>
+    <% } else { %>
+      <% foundPersons.forEach(person => { %>
+        <div class="person-card">
+          <img src="<%= person.image %>" alt="Image of <%= person.name %>" class="person-img" />
+          <div class="person-info">
+            <h3><%= person.name %></h3>
+            <p><strong>Phone:</strong> <%= person.contact %></p>
+            <p><strong>City:</strong> <%= person.location %></p>
+            <p><strong>Age:</strong> <%= person.age || 'Unknown' %></p>
+          </div>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+</body>
+</html>
+
+
+
